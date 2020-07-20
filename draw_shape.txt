@@ -1,0 +1,15 @@
+#绘制地级市
+for info, shp in zip(m5.states_info, m5.states):
+    ziyang=info['NAME_2']
+    if ziyang=='Ziyang':
+        proid = info['NAME_3']  # 打开CHN_adm12.csv文件，可以知道'NAME_1','NAME_2'代表的名称
+        if proid == 'Lezhi':
+            poly = Polygon(shp,facecolor='w',edgecolor='k', lw=0.3,alpha=0.2) # 绘制四川省县级市界(乐至)
+            ax.add_patch(poly)
+            proid1=info['NAME_3']
+        if proid=='Anju':
+            poly = Polygon(shp, facecolor='w',edgecolor='k', lw=0.3,alpha=0.2)  # 绘制四川省县级市界（安岳）
+            ax.add_patch(poly)
+        if proid=='Ziyang':
+            poly = Polygon(shp, facecolor='w',edgecolor='k', lw=0.3,alpha=0.2)  # 绘制四川省县级市界（雁江）
+            ax.add_patch(poly)
